@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.My_Game_v1"
+        tools:targetApi="31">
+         <activity
+            android:name=".Logo_Activity"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape"
+            android:exported="true"
+            android:theme="@style/Theme.My_Game_v1.noActionBar" />
+        <activity
+            android:name=".Penivaiz"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar" />
+        <activity
+            android:name=".Door"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar" />
+        <activity
+            android:name=".Poisk_Kota"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar" />
+        <activity
+            android:name=".Main_key"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar" />
+        <activity
+            android:name=".Game_Over"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar" />
+        <activity
+            android:name=".Zagadka"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.My_Game_v1.noActionBar"/>
+    </application>
+
+</manifest>
