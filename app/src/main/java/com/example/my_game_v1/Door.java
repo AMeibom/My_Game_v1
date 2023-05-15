@@ -29,25 +29,30 @@ public class Door extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mPlayer = MediaPlayer.create(this, R.raw.zvuk);
 
+        //Создание переменных door и присваивание им значения, полученные по id из ресурсов.
         door1=findViewById(R.id.btn_door);
         door2=findViewById(R.id.btn_door2);
         door3=findViewById(R.id.btn_door3);
 
+        //Находим кнопки дверей и устанавливаем им фон с открытыми дверьми.
         door1.setBackgroundResource(R.drawable.door_open);
         door2.setBackgroundResource(R.drawable.door_open);
         door3.setBackgroundResource(R.drawable.door_open);
 
+        //Получаем анимацию фона для каждой двери.
         mAnimation1 = (AnimationDrawable) door1.getBackground();
         mAnimation2 = (AnimationDrawable) door2.getBackground();
         mAnimation3= (AnimationDrawable) door3.getBackground();
 
+        //Устанавливаем слушатель кликов на первую дверь.
         door1.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                // Создаем анимацию
-                mPlayer.start();
-             Animation animation = AnimationUtils.loadAnimation(Door.this, R.anim.logo_anim_door);
-               ImageView logoImage = findViewById(R.id.btn_door);
+                // В обработчике клика создаем анимацию и запускаем звуковой файл.
+              mPlayer.start();
+              Animation animation = AnimationUtils.loadAnimation(Door.this, R.anim.logo_anim_door);
+              ImageView logoImage = findViewById(R.id.btn_door);
                 // Устанавливаем слушатель завершения анимации
                 animation.setAnimationListener(new Animation.AnimationListener() {
                   @Override

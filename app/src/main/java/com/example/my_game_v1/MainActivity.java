@@ -38,20 +38,19 @@ public class MainActivity extends AppCompatActivity {
         }
         textView.setText(text); // устанавливаем текст в TextView
         mPlayer = MediaPlayer.create(this, R.raw.heroy);
-        mPlayer.start();
+        mPlayer.start();//запуск проигрывания звука.
     }
 
     public void Start(View v) {
-        // Создаем анимацию
-
-                Intent intent = new Intent(MainActivity.this, Door.class);
-                startActivity(intent);
-        mPlayer.stop();
+        Intent intent = new Intent(MainActivity.this, Door.class);//создание намерения для перехода на другую активность.
+        startActivity(intent);//создание намерения для перехода на другую активность.
+        mPlayer.stop();//остановка проигрывания звука.
             }
+    //вызов родительского метода onDestroy.
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        finish();
+        finish();// завершение активности.
 
     }
 }

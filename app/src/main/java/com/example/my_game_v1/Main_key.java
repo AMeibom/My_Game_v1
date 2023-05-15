@@ -25,27 +25,23 @@ public class Main_key extends AppCompatActivity {
         setContentView(R.layout.activity_poisk_key);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        btn_start2=findViewById(R.id.btn_start2);
-        key=findViewById(R.id.key);
-        btn_start2.setEnabled(false);
-        mPlayer = MediaPlayer.create(this, R.raw.z);
-
-           }
-
+        btn_start2 = findViewById(R.id.btn_start2);//Создание переменной btn_start2 и присваивание ей значения, полученного по id из ресурсов.
+        key = findViewById(R.id.key);//Создание переменной key и присваивание ей значения, полученного по id из ресурсов.
+        btn_start2.setEnabled(false); //Отключение кнопки btn_start2.
+        mPlayer = MediaPlayer.create(this, R.raw.z); //Создание переменной mPlayer и присваивание ей значения, полученного из медиа-ресурса.
+    }
+    // Объявление метода onClickStart2, который срабатывает при нажатии на кнопку.
             public void onClickStart2(View view) {
                 // Создаем анимацию
-                mPlayer.start();
-                Animation animation = AnimationUtils.loadAnimation(Main_key.this, R.anim.logo_anim_key);
-                ImageView logoImage = findViewById(R.id.key);
-                logoImage.startAnimation(animation);
-                btn_start2.setEnabled(true);
+                mPlayer.start();//Запуск медиа-ресурса.
+                Animation animation = AnimationUtils.loadAnimation(Main_key.this, R.anim.logo_anim_key);//Создание переменной animation и присваивание ей значения, полученного из анимации в ресурсах.
+                ImageView logoImage = findViewById(R.id.key);//Получение элемента ImageView с помощью id из ресурсов и присваивание его переменной logoImage.
+                logoImage.startAnimation(animation);//Запуск анимации для logoImage.
+                btn_start2.setEnabled(true);//Включение кнопки btn_start2.
                        }
-
-
     public void onClickStart(View view) {
-        Intent intent = new Intent(Main_key.this, Zagadka.class);
-        startActivity(intent);
-
+        Intent intent = new Intent(Main_key.this, Zagadka.class);//Создание интента для перехода на другую активность
+        startActivity(intent);//Запуск активности Zagadka
     }
     @Override
     protected void onDestroy() {

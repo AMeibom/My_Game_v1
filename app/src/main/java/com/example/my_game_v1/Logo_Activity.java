@@ -22,33 +22,34 @@ public class Logo_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logo);
+        setContentView(R.layout.activity_logo);//установка макета для активности.
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//установка флага на полноэкранный режим.
 
-        mPlayer = MediaPlayer.create(this, R.raw.start);
-        mPlayer.start();
+        mPlayer = MediaPlayer.create(this, R.raw.start);//создание объекта MediaPlayer для проигрывания звука.
+        mPlayer.start();//запуск проигрывания звука.
 
-        Animation logoAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.logo_anim);
-        Animation buttonLogoAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha_anim);
+        Animation logoAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.logo_anim);//загрузка анимации для изображения логотипа.
+        Animation buttonLogoAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha_anim);// загрузка анимации для кнопки.
 
-        ImageView logoImage = findViewById(R.id.imageView4);
-        ImageButton bAnim = findViewById(R.id.button);
+        ImageView logoImage = findViewById(R.id.imageView4);//получение ссылки на изображение логотипа.
+        ImageButton bAnim = findViewById(R.id.button);//получение ссылки на кнопку.
 
-        logoImage.startAnimation(logoAnim);
-        bAnim.startAnimation(buttonLogoAnim);
+        logoImage.startAnimation(logoAnim);//запуск анимации для изображения логотипа.
+        bAnim.startAnimation(buttonLogoAnim);//запуск анимации для кнопки.
     }
+    //объявление метода onClickStart, который будет вызываться при нажатии на кнопку.
     public void onClickStart(View view) {
-        mPlayer.stop();
+        mPlayer.stop();//остановка проигрывания звука.
 
-        Intent intent = new Intent(Logo_Activity.this,MainActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent(Logo_Activity.this,MainActivity.class);//создание намерения для перехода на другую активность.
+        startActivity(intent);//запуск другой активности.
 
     }
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        finish();
+        super.onDestroy();//вызов родительского метода onDestroy.
+        finish();// завершение активности.
 
     }
     }

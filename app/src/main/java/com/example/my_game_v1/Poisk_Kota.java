@@ -42,10 +42,10 @@ public class Poisk_Kota extends AppCompatActivity {
 
         // присваивание переменной активити элемента представления activity_main
         coordinatesOut = findViewById(R.id.coordinatesOut);
-       btn_start = findViewById(R.id.start);
+        btn_start = findViewById(R.id.start);
 
         coordinatesOut.setOnTouchListener(listener);
-       btn_start.setEnabled(false);
+        btn_start.setEnabled(false);
 
     }
     // объект обработки касания экрана (слушатель)
@@ -66,23 +66,23 @@ public class Poisk_Kota extends AppCompatActivity {
                     // задание условия нахождения кота Шрёдингера
                     if (x < (xCat + deltaCat) && x > (xCat - deltaCat) && y < (yCat + deltaCat) && y > (yCat - deltaCat)) { // если пользователь коснулся места нахождения кота
                         // размещаем тост (контекст, сообщение, длительность сообщения)
-                        LayoutInflater inflater = getLayoutInflater();
+                        LayoutInflater inflater = getLayoutInflater(); //Создаём объект LayoutInflater через вызов метода getLayoutInflater().
+ // Получаем View объект, который представляет наш кастомный Toast, вызывая метод inflate() у inflater объекта и передавая ему id нашего Toast layout'а из файлов ресурсов.
                         View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast));
 
-                        Toast toast = new Toast(getApplicationContext());
+                        Toast toast = new Toast(getApplicationContext());//Создаём объект Toast, и передаем его в качестве параметра конструктора Toast.
                         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);// задание позиции на экране (положение, смещение по оси Х, смещение по оси Y)
-                        toast.setDuration(Toast.LENGTH_SHORT);
-                        toast.setView(layout);
-                        toast.show();// демонстрация тоста на экране*/
-                        mediaPlayer.start();
-                        btn_start.setEnabled(true);
+                        toast.setDuration(Toast.LENGTH_SHORT);//Устанавливаем время отображения Toast
+                        toast.setView(layout);//определение View компонента для отображения во всплывающем сообщении.
+                        toast.show();// демонстрация тоста на экране
+                        mediaPlayer.start();//Устанавливаем время отображения Toast, используя метод setDuration() и параметр Toast.LENGTH_SHORT.
+                        btn_start.setEnabled(true);//Активируем кнопку
 
                     }
                     break;
                 case MotionEvent.ACTION_UP: // отпускание
                 case MotionEvent.ACTION_CANCEL: // внутрений сбой (аналогичен ACTION_UP)
-                    //sUp = "X=" + resultX + ", Y=" + resultY;
-                    //  coordinatesUP.setText(sUp);
+
                     break;
             }
             return true; // подтверждение нашей обработки событий

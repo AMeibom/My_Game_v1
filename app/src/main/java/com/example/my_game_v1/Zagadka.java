@@ -28,7 +28,7 @@ public class Zagadka extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zagadka);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//Установка флага FLAG_FULLSCREEN для активности, чтобы сделать ее на весь экран.
         editText = findViewById(R.id.editText);
 
         TextView textView = findViewById(R.id.textView); // получаем ссылку на TextView
@@ -46,8 +46,9 @@ public class Zagadka extends AppCompatActivity {
         textView.setText(text); // устанавливаем текст в TextView
 
         btn_start2 = findViewById(R.id.btn_start2);
-        btn_start2.setEnabled(false);
+        btn_start2.setEnabled(false); // отключение кнопки
         final String requiredWord = "карта" ; // здесь указываем нужное слово
+        //определяется объект editText типа EditText и устанавливается слушатель изменения текста при помощи метода addTextChangedListener().
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -56,20 +57,17 @@ public class Zagadka extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!s.toString().equals(requiredWord)) {
-                    editText.setError("Неверное слово");
+                    editText.setError("Неверное слово");//Если текст в текстовом поле не совпадает с правильным словом, то устанавливается сообщение об ошибке
                 } else {
                     editText.setError(null);
-                    btn_start2.setEnabled(true);
+                    btn_start2.setEnabled(true);//включение кнопки
                 }
             }
-
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
-
     }
-
   public void onClickStart(View view) {
         Intent intent = new Intent(Zagadka.this, Game_Over.class);
         startActivity(intent);
