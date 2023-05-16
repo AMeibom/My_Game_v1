@@ -16,13 +16,14 @@ public class Game_Over extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        mPlayer = MediaPlayer.create(this, R.raw.fanfary);
-        mPlayer.start();
+        mPlayer = MediaPlayer.create(this, R.raw.fanfary);//Создание переменной mPlayer и присваивание ей значения, полученного из медиа-ресурса.
+        mPlayer.start();//Запуск медиа-ресурса.
     }
 
 
     public void Exit(View view) {
-        mPlayer.stop();
-        finishAffinity();
+        mPlayer.stop();//остановка проигрывания звука.
+        finishAffinity();// Завершить все активности текущего приложения
+
     }
 }

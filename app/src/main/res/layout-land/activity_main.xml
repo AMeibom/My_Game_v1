@@ -22,9 +22,10 @@
         android:layout_height="296dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.28">
+        app:layout_constraintVertical_bias="0.226">
 
         <TextView
             android:id="@+id/text"
@@ -37,12 +38,16 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="402dp"
-        android:layout_height="91dp"
+        android:layout_width="242dp"
+        android:layout_height="93dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
         android:onClick="Start"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text1"
+        app:layout_constraintVertical_bias="0.75"
         app:srcCompat="@drawable/dalee" />
 </androidx.constraintlayout.widget.ConstraintLayout>

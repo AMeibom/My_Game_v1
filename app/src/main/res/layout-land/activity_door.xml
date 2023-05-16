@@ -53,11 +53,13 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="691dp"
-        android:layout_height="55dp"
-        android:text="   Лишь только одна из трех дверей,  выведет тебя из лабиринта"
-        android:textColor="#D8C83C"
-        android:textColorHint="#ED0D0D"
+        android:layout_width="692dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="3dp"
+        android:text="Лишь только одна из трех дверей,  выведет тебя из лабиринта"
+        android:textAlignment="center"
+        android:fontFamily="@font/font"
+        android:textColor="@color/teal_700"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"

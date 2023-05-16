@@ -110,7 +110,7 @@ public class Door extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Создаем анимацию
-                mPlayer.start();
+                mPlayer.start();///запуск проигрывания звука.
                 Animation animation = AnimationUtils.loadAnimation(Door.this, R.anim.logo_anim_door3);
                 ImageView logoImage = findViewById(R.id.btn_door3);
                 // Устанавливаем слушатель завершения анимации
@@ -123,8 +123,8 @@ public class Door extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         // Завершение анимации
                         // Создаем интент для перехода в другую активность
-                        Intent intent = new Intent(Door.this, Penivaiz.class);
-                        startActivity(intent);
+                        Intent intent = new Intent(Door.this, Penivaiz.class);//Создание интента для перехода на другую активность
+                        startActivity(intent);//Запуск активности следующей активности
                     }
                     @Override
                     public void onAnimationRepeat(Animation animation) {

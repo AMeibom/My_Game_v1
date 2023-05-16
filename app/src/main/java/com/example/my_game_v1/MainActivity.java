@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mPlayer.stop();//остановка проигрывания звука.
             }
     //вызов родительского метода onDestroy.
-    @Override
+ @Override
     protected void onDestroy() {
         super.onDestroy();
         finish();// завершение активности.

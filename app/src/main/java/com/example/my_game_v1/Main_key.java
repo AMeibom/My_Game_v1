@@ -28,26 +28,31 @@ public class Main_key extends AppCompatActivity {
         btn_start2 = findViewById(R.id.btn_start2);//Создание переменной btn_start2 и присваивание ей значения, полученного по id из ресурсов.
         key = findViewById(R.id.key);//Создание переменной key и присваивание ей значения, полученного по id из ресурсов.
         btn_start2.setEnabled(false); //Отключение кнопки btn_start2.
+        btn_start2.setVisibility(View.INVISIBLE); // текст становится невидимым
         mPlayer = MediaPlayer.create(this, R.raw.z); //Создание переменной mPlayer и присваивание ей значения, полученного из медиа-ресурса.
     }
+
     // Объявление метода onClickStart2, который срабатывает при нажатии на кнопку.
-            public void onClickStart2(View view) {
-                // Создаем анимацию
-                mPlayer.start();//Запуск медиа-ресурса.
-                Animation animation = AnimationUtils.loadAnimation(Main_key.this, R.anim.logo_anim_key);//Создание переменной animation и присваивание ей значения, полученного из анимации в ресурсах.
-                ImageView logoImage = findViewById(R.id.key);//Получение элемента ImageView с помощью id из ресурсов и присваивание его переменной logoImage.
-                logoImage.startAnimation(animation);//Запуск анимации для logoImage.
-                btn_start2.setEnabled(true);//Включение кнопки btn_start2.
-                       }
+    public void onClickStart2(View view) {
+        // Создаем анимацию
+        mPlayer.start();//Запуск медиа-ресурса.
+        Animation animation = AnimationUtils.loadAnimation(Main_key.this, R.anim.logo_anim_key);//Создание переменной animation и присваивание ей значения, полученного из анимации в ресурсах.
+        ImageView logoImage = findViewById(R.id.key);//Получение элемента ImageView с помощью id из ресурсов и присваивание его переменной logoImage.
+        logoImage.startAnimation(animation);//Запуск анимации для logoImage.
+        btn_start2.setEnabled(true);//Включение кнопки btn_start2.
+        btn_start2.setVisibility(View.VISIBLE); // текст становится видимым
+    }
+
     public void onClickStart(View view) {
         Intent intent = new Intent(Main_key.this, Zagadka.class);//Создание интента для перехода на другую активность
-        startActivity(intent);//Запуск активности Zagadka
+        startActivity(intent);//Запуск активности следующей активности
+         mPlayer.stop();//остановка проигрывания звука.
     }
-    @Override
+   @Override
     protected void onDestroy() {
-        super.onDestroy();
-        finish();
-
+       super.onDestroy();
+       finish();
+   }
     }
-}
+
 

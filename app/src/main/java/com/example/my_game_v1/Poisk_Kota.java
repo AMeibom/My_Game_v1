@@ -45,8 +45,8 @@ public class Poisk_Kota extends AppCompatActivity {
         btn_start = findViewById(R.id.start);
 
         coordinatesOut.setOnTouchListener(listener);
-        btn_start.setEnabled(false);
-
+        btn_start.setEnabled(false);//Отключение кнопки btn_start2.
+        btn_start.setVisibility(View.INVISIBLE);// текст становится невидимым
     }
     // объект обработки касания экрана (слушатель)
     private View.OnTouchListener listener = new View.OnTouchListener() {
@@ -77,7 +77,7 @@ public class Poisk_Kota extends AppCompatActivity {
                         toast.show();// демонстрация тоста на экране
                         mediaPlayer.start();//Устанавливаем время отображения Toast, используя метод setDuration() и параметр Toast.LENGTH_SHORT.
                         btn_start.setEnabled(true);//Активируем кнопку
-
+                        btn_start.setVisibility(View.VISIBLE);// текст становится видимым
                     }
                     break;
                 case MotionEvent.ACTION_UP: // отпускание
@@ -89,14 +89,15 @@ public class Poisk_Kota extends AppCompatActivity {
         }
     };
     public void Start(View view) {
-        Intent intent = new Intent(Poisk_Kota.this, Main_key.class);
-        startActivity(intent);
+        mediaPlayer.stop();//остановка проигрывания звука.
+        Intent intent = new Intent(Poisk_Kota.this, Main_key.class);//Создание интента для перехода на другую активность
+        startActivity(intent);//Запуск активности следующей активности
 
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+
     }
 
     }

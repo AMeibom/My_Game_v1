@@ -22,22 +22,21 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="581dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="762dp"
+        android:layout_height="28dp"
+        android:background="#000000"
+        android:fontFamily="@font/font"
         android:gravity="center"
         android:text="НАЙДИТЕ ПОДХОДЯЩИЙ ВАМ КЛЮЧ"
-        android:textColor="#FF4500"
+        android:textColor="@color/teal_700"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:fontFamily="@font/font"
-        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/key"
@@ -56,7 +55,9 @@
         android:id="@+id/btn_start2"
         android:layout_width="256dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/shape_list2"
+        android:fontFamily="@font/font"
         android:onClick="onClickStart"
         android:text="Далее"
         android:textSize="24sp"

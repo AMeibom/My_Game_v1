@@ -13,45 +13,58 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/stena5" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="675dp"
-        android:layout_height="35dp"
-        android:text="Это комната мага-Шрёдингера.Найти ключь в этой комнате"
-        android:textColor="#D8C83C"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/coordinatesOut"
-        android:layout_width="629dp"
-        android:layout_height="343dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="647dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/shape_list"
+        android:fontFamily="@font/font"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="744dp"
+        android:layout_height="33dp"
+        android:fontFamily="@font/font"
+        android:text="Это комната мага-Шрёдингера.Найти ключь в этой комнате"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatesOut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/start"
         android:layout_width="256dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/shape_list2"
+        android:fontFamily="@font/font"
         android:onClick="Start"
         android:text="Далее"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.971" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
